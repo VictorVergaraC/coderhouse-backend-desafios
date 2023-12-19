@@ -65,23 +65,23 @@ class TicketManager {
     }
 }
 
-const ticketManager = new TicketManager()
-ticketManager.precioBaseDeGanancia = 2500;
+// const ticketManager = new TicketManager()
+// ticketManager.precioBaseDeGanancia = 2500;
 
-ticketManager.agregarEvento('Concierto', 'Estadio Nacional', 20000)
-ticketManager.agregarEvento('Conferencia', 'Municipalidad', 10000)
+// ticketManager.agregarEvento('Concierto', 'Estadio Nacional', 20000)
+// ticketManager.agregarEvento('Conferencia', 'Municipalidad', 10000)
 
-console.log(ticketManager.getEventos())
+// console.log(ticketManager.getEventos())
 
-ticketManager.agregarUsuario(1, 1)
-ticketManager.agregarUsuario(1, 1)
-ticketManager.agregarUsuario(1, 3)
+// ticketManager.agregarUsuario(1, 1)
+// ticketManager.agregarUsuario(1, 1)
+// ticketManager.agregarUsuario(1, 3)
 
-console.log(ticketManager.getEventos())
+// console.log(ticketManager.getEventos())
 
-ticketManager.ponerEventoEnGira(2, 'Estadio Pucón', new Date('2024-01-01'))
+// ticketManager.ponerEventoEnGira(2, 'Estadio Pucón', new Date('2024-01-01'))
 
-console.log(ticketManager.getEventos())
+// console.log(ticketManager.getEventos())
 
 class ProductManager {
     
@@ -127,6 +127,7 @@ class ProductManager {
 
 const prodManager = new ProductManager()
 prodManager.addProduct('Chocolate', 'Con almendras', 4990, 'Sin imagen', 'abc123', 10)
+prodManager.addProduct('Coca Cola Zero', 'Sin azúcar', 2100, 'Sin imagen', '321cba', 10)
 console.log('Listado de productos:', prodManager.getProducts())
 prodManager.addProduct('Chocolate', 'Con almendras', 4990, 'Sin imagen', 'abc123', 10)
 console.log('Producto by id:', prodManager.getProductById(1))
