@@ -17,7 +17,7 @@ class TicketManager {
         const precioConGanancia = parseInt(precio) + (parseInt(precio) * 0.5) + this.precioBaseDeGanancia
 
         const nuevoEvento = {
-            id, nombreEvt: nombre, lugarEvt: lugar, precio: precioConGanancia, capacidad, fecha, participantes
+            id, nombre, lugar, precio: precioConGanancia, capacidad, fecha, participantes
         }
 
         this.eventos = [...this.eventos, nuevoEvento]
@@ -51,7 +51,7 @@ class TicketManager {
                 lugar: nuevaLocalidad,
                 fecha: nuevaFecha
             }
-            console.log(`\nEvento ${idEvento} puesto en Gira!\n`)
+            console.log(`\nEvento ${idEvento} puesto en Gira!`, this.eventos[index], '\n')
             return 
         }
     }
