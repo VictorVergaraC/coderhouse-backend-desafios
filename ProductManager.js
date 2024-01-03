@@ -65,6 +65,14 @@ class ProductManager {
     }
 
     async updateProduct(idProduct, newObjProduct) {
+
+        const product = await this.getProductById(idProduct);
+
+        if (!product) {
+            console.log("El producto no existe, por ende no se puede actualizar ...");
+            return;
+        }
+
         const arrData = await this.getProducts()
 
         if (arrData.length > 0) {
@@ -161,6 +169,13 @@ const updateObject = {
 
 const prodManager = new ProductManager("products.json")
 
+const loadProducts = async () => {
+    
+    const allProducts = await prodManager.getProducts();
+    console.log("Listado de productos ...");
+    console.log(allProducts);
+}
+
 // prodManager.addProduct(newObject);
 // prodManager.updateProduct(1, updateObject);
 // prodManager.getProductById(2);
@@ -168,11 +183,3 @@ const prodManager = new ProductManager("products.json")
 // prodManager.deleteProduct(2);
 // prodManager.deleteProduct(5);
 // loadProducts();
-
-const loadProducts = async () => {
-
-    const allProducts = await prodManager.getProducts();
-    console.log("Listado de productos ...");
-    console.log(allProducts);
-}
-
