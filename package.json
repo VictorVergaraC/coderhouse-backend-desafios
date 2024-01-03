@@ -1,0 +1,12 @@
+{
+  "name": "primer-desafio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "node ProductManager.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
