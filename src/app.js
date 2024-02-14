@@ -14,16 +14,16 @@ export const __dirname = dirname(__filename);
 const app = express();
 const PORT = 8080;
 
-//Configurar handlebars
-app.engine("handlebars", handlebars.engine())
-// Carpeta views para vistas
-app.set("views", __dirname + "/views")
-//Usa handlebars como motor de plantillas
+// * Configurar handlebars
+app.engine("handlebars", handlebars.engine());
+// * Carpeta views para vistas
+app.set("views", __dirname + "/views");
+// * Usa handlebars como motor de plantillas
 app.set("views engine", "handlebars")
-//Usa los archivos dentro de la carpeta views
-app.use(express.static(__dirname + "/views"))
-//Usamos los archivos de la carpeta public
-app.use(express.static(path.join(__dirname, "public")))
+// * Usa los archivos dentro de la carpeta views
+app.use(express.static(__dirname + "/views"));
+// * Usamos los archivos de la carpeta public
+app.use(express.static(path.join(__dirname, "public")));
 
 // * Routes
 app.use("/", productsRouter);
