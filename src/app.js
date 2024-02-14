@@ -49,18 +49,26 @@ io.on('connection', socket => {
     const objProduct = new ProductManager;
 
     socket.on('getProducts', async () => {
-        const arrProducts = await objProduct.getProducts();
-        socket.emit('products', arrProducts);
+        loadProducts();
     });
 
     socket.on('insertProduct', async (data) => {
         console.log(data);
 
         await objProduct.addProduct(data);
-        const arrProducts = await objProduct.getProducts();
-        socket.emit('products', arrProducts);
+        loadProducts();
 
     });
+
+    socket.on('deleteProduct', async (data) => {
+        await objProduct.deleteProduct(data);
+        loadProducts();
+    });
+
+    const loadProducts = async () => {
+        const arrProducts = await objProduct.getProducts();
+        socket.emit('products', arrProducts);
+    }
 
 
 });

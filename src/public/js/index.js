@@ -17,11 +17,7 @@ formProduct.addEventListener('submit', (evt) => {
 
     formProduct.querySelector('form').reset();
 
-    Swal.fire({
-        icon: "success",
-        title: "Producto creado!",
-        text: ` `
-    })
+    alert('Producto creado!');
 });
 
 socket.emit('getProducts');
@@ -30,12 +26,12 @@ socket.on('products', productos => {
 
     const containerProducts = document.getElementById('container-products');
     containerProducts.innerHTML = '';
-    
+
     productos.forEach(elem => {
         const element = document.createElement('article');
         element.classList.add('card', 'border');
-        const { title, description, price, stock } = elem;
-        
+        const { id, title, description, price, stock } = elem;
+
         element.innerHTML = `
             <div class="card-header">
                 <h6>${title}</h6>
@@ -51,8 +47,18 @@ socket.on('products', productos => {
                     <strong>Stock: </strong> ${stock}
                 </p>
             </div>
+            <div class="card-footer">
+                <button class="btn btn-sm btn-danger" onclick="handleDeleteProduct(${id})">Eliminar</button>
+            </div>
         `;
+
         containerProducts.appendChild(element);
     });
 
 });
+
+const handleDeleteProduct = async (strId) => {
+    const productId = parseInt(strId);
+    socket.emit('deleteProduct', productId);
+    alert('Producto eliminado correctamente!');
+}
