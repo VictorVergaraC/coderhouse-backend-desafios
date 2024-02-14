@@ -9,9 +9,9 @@
 </head>
 <body>
     <main class="container d-flex gap-3">
-        <aside>
+        <aside id="form-product">
             <h1>Formulario:</h1>
-            <form id="formProduct" action="" method="POST" class="d-flex flex-column gap-3">
+            <form action="" method="POST" class="d-flex flex-column gap-3">
                 <article class="d-flex flex-column gap-2">
                     <input type="text" id="title" name="title" placeholder="Ingrese un título" class="form-control form-control-sm" required />
                 </article>
@@ -37,25 +37,8 @@
         </aside>
         <aside>
             <h1>Lista de productos</h1>
-            <section class="d-flex flex-wrap gap-2">
-                {{#each productos}}
-                    <article class="card border">
-                        <div class="card-header">
-                            <h6>{{title}}</h6>
-                        </div>
-                        <div class="card-body">
-                            <p>
-                                <strong>Descripción:</strong> {{description}}
-                            </p>
-                            <p>
-                                <strong>Precio: </strong> ${{price}}
-                            </p>
-                            <p>
-                                <strong>Stock: </strong> {{stock}}
-                            </p>
-                        </div>
-                    </article>
-                {{/each}}
+            <section id="container-products" class="d-flex flex-wrap gap-2">
+                
             </section>
 
         </aside>

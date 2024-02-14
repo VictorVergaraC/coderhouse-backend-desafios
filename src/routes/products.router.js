@@ -1,31 +1,22 @@
-import express from "express";
-import http from "http";
-import { Server } from "socket.io";
-import handlebars from "express-handlebars";
+// import express from "express";
 
-import { ProductManager } from "../public/models/ProductsManager.js";
+// import { ProductManager } from "../public/models/ProductsManager.js";
 
-const app = express();
-const server = http.createServer(app);
-const io = new Server(server);
+// const app = express();
 
-const router = express.Router();
 
-router.get("/", async (req, res) => {
-    const objProduct = new ProductManager;
-    const arrProducts = await objProduct.getProducts();
+// const router = express.Router();
 
-    return res.render('realtimeProducts.hbs', { productos: arrProducts });
-});
+// router.get("/", async (req, res) => {
+//     const objProduct = new ProductManager;
+//     const arrProducts = await objProduct.getProducts();
 
-router.get("/realtimeproducts", async (req, res) => {
+//     return res.render('realtimeProducts.hbs', { productos: arrProducts });
+// });
 
-    res.json({ message: "Hola mundo!" });
-});
+// router.get("/realtimeproducts", async (req, res) => {
 
-io.on('connection', (socket) => {
-    console.log('Usuario conectado');
-    
-});
+//     res.json({ message: "Hola mundo!" });
+// });
 
-export default router;
+// export default router;
