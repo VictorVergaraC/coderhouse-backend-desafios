@@ -10,7 +10,7 @@ export const __dirname = dirname(__filename);
 export class ProductManager {
 
     constructor() {
-        this.path = path.join(__dirname, '..', 'data', 'productos.json');
+        this.path = path.join(__dirname, '..', 'public', 'data', 'productos.json');
     }
 
     async addProduct(objProduct) {

@@ -5,7 +5,7 @@ import handlebars from "express-handlebars";
 import { Server } from "socket.io";
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { ProductManager } from './public/models/ProductsManager.js';
+import { ProductManager } from './models/ProductsManager.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
