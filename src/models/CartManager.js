@@ -9,7 +9,7 @@ export const __dirname = dirname(__filename);
 
 export class CartManager {
     constructor() {
-        this.path = path.join(__dirname, '..', 'data', 'carrito.json');
+        this.path = path.join(__dirname, '..', 'public', 'data', 'carrito.json');
     }
 
     async getCartById(idCart) {
